@@ -1,0 +1,38 @@
+package SeleniumSessions;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class FrameHnding {
+
+	static WebDriver driver;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ChromeOptions opt = new ChromeOptions();
+		opt.addArguments("--disable-notifications");
+		
+		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\ChromeDriver 97.0.4692.71\\chromedriver.exe"; 
+		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+		driver = new ChromeDriver(opt);
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		
+		
+		//System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
+		
+		driver.get("https://classic.freecrm.com");
+		
+		
+		
+	}
+
+}
