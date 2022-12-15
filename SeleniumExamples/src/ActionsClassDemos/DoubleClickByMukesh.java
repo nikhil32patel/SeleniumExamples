@@ -33,6 +33,7 @@ public class DoubleClickByMukesh {
 		 * //WebDriver driver = new ChromeDriver();
 		 */		
 		
+		//Web Driver manager code added to handle latest chrome driver 
 		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("https://api.jquery.com/dblclick/");
 		driver.manage().window().maximize();
