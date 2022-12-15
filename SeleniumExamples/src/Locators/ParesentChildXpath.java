@@ -8,20 +8,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import pac.config.Config;
+
 public class ParesentChildXpath {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 				
-		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
+//		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
+//		ChromeOptions chromeoption = new ChromeOptions();
+//		chromeoption.addArguments("--disable-notifications");
+//		chromeoption.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation")); 
+//		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+//		WebDriver driver = new ChromeDriver(chromeoption);
 		
-		ChromeOptions chromeoption = new ChromeOptions();
-		chromeoption.addArguments("--disable-notifications");
-		chromeoption.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation")); 
-		
-		System.setProperty("webdriver.chrome.driver",ChromeDriver);
-		WebDriver driver = new ChromeDriver(chromeoption);
 		//driver.get("https://money.rediff.com/gainers/bse/daily/groupall");
+		
+		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("https://www.spicejet.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

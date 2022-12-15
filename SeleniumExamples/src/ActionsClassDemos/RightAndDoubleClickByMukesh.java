@@ -8,21 +8,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
+import pac.config.Config;
+
 public class RightAndDoubleClickByMukesh {
 
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver",""
-				+ "S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\New folder\\96.0.4664.45\\chromedriver.exe");
-		ChromeOptions options = new ChromeOptions();
-		//chrome is being controled by automated software
-		options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));    
-		WebDriver driver = new ChromeDriver(options);
+//		System.setProperty("webdriver.chrome.driver",""
+//				+ "S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\New folder\\96.0.4664.45\\chromedriver.exe");
+//		ChromeOptions options = new ChromeOptions();
+//		//chrome is being controled by automated software
+//		options.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));    
+//		WebDriver driver = new ChromeDriver(options);
 		
-		//WebDriver driver = new ChromeDriver();
-		//driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
+		
+		WebDriver driver = Config.startBrowser("chrome");
+		driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
 		
 		
 		driver.manage().window().maximize();

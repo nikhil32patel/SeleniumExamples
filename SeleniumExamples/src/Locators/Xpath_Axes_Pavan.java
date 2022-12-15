@@ -8,14 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pac.config.Config;
+
 public class Xpath_Axes_Pavan {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
-		System.setProperty("webdriver.chrome.driver",ChromeDriver);
-		WebDriver driver = new ChromeDriver();
+//		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
+//		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+//		WebDriver driver = new ChromeDriver();
 		//driver.get("https://money.rediff.com/gainers/bse/daily/groupall");
+		
+		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

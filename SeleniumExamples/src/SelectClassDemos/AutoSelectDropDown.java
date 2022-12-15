@@ -8,15 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pac.config.Config;
+
 public class AutoSelectDropDown {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
-		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+//		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
+//		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+//		WebDriver driver = new ChromeDriver();
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("http://3.110.88.201/dropdownsPractise/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
