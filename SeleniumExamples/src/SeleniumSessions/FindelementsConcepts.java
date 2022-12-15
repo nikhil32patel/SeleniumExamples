@@ -8,14 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pac.config.Config;
+
 public class FindelementsConcepts {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver","S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\ChromeDriver 93.0.4577.63\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+//		System.setProperty("webdriver.chrome.driver","S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\ChromeDriver 93.0.4577.63\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+		
+		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("http://www.half.ebay.com/");
 
 		driver.manage().window().maximize();
@@ -32,9 +36,6 @@ public class FindelementsConcepts {
 		 {
 			 System.out.println(linklist.get(i).getText());
 		 }
-		 
-		 
-		 
 		 
 	}
 

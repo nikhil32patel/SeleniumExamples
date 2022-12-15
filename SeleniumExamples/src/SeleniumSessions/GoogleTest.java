@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pac.config.Config;
+
 public class GoogleTest {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -17,10 +19,11 @@ public class GoogleTest {
 
 		
 		
-		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
-		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+//		String ChromeDriver ="S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\Chromedriver_99.0.4844.51\\chromedriver.exe"; 
+//		System.setProperty("webdriver.chrome.driver",ChromeDriver);
+//		WebDriver driver = new ChromeDriver();
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("https://www.google.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -29,7 +32,6 @@ public class GoogleTest {
 		driver.switchTo().frame("backgroundImage");
 		Thread.sleep(10);
 		driver.findElement(By.cssSelector("#input")).sendKeys("type something");
-		
 		
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='q']/parent::form"))).sendKeys("type to search");
 		//driver.findElement(By.xpath("//input[@Name='btnI']")).click();

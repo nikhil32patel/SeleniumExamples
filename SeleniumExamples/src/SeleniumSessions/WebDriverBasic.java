@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import pac.config.Config;
+
 public class WebDriverBasic {
 
 	public static void main(String[] args) {
@@ -23,8 +25,10 @@ public class WebDriverBasic {
 		 */
 		
 		// HOW TO LUNCH CHROME BROWSWER
-		System.setProperty("webdriver.chrome.driver","S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\ChromeDriver 91.0.4472.19\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+//		System.setProperty("webdriver.chrome.driver","S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\ChromeDriver 91.0.4472.19\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+		
+		WebDriver driver = Config.startBrowser("chrome");
 		driver.get("https://www.google.co.in");
 		
 		String sitetitial = driver.getTitle();

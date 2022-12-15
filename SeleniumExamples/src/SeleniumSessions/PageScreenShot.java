@@ -9,6 +9,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pac.config.Config;
+
 public class PageScreenShot {
 
 	static WebDriver driver;
@@ -18,9 +20,10 @@ public class PageScreenShot {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		//System.setProperty("webdriver.chrome.driver","S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\ChromeDriver 94.0.4606.41\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver",""
-				+ "S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\New folder\\96.0.4664.45\\chromedriver.exe");
-		driver = new ChromeDriver();
+//		System.setProperty("webdriver.chrome.driver",""
+//				+ "S:\\SOFTWARES\\Selenium\\WebDrivers\\Chrome\\New folder\\96.0.4664.45\\chromedriver.exe");
+		//driver = new ChromeDriver();
+		driver = Config.startBrowser("chrome");
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -36,8 +39,8 @@ public class PageScreenShot {
 		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
 		
 		// 2. now copy the screenshot to desired location using copyfile method.
-		FileUtils.copyFile(screenshot,new File("S:\\TESTING\\WEB\\Eclipse\\NaveenSelenium\\src\\SeleniumSessions"
+		FileUtils.copyFile(screenshot,new File("S:\\TESTING\\WEB\\Eclipse\\SeleniumExamples\\src\\SeleniumSessions"
 				+filename+".JPG"));
-		
+		System.out.println("Refresh project and verify file name in project");
 	}
 }
