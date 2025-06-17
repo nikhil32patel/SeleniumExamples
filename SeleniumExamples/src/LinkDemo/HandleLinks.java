@@ -1,5 +1,6 @@
 package LinkDemo;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +27,7 @@ public class HandleLinks {
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		// Using linkText
 		//driver.findElement(By.linkText("Baby")).click();

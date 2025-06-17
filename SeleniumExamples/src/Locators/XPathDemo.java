@@ -1,12 +1,13 @@
 package Locators;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import pac.config.Config;
 
 public class XPathDemo {
@@ -29,8 +30,8 @@ public class XPathDemo {
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		
 		// XPath with OR operator (Any of one condition shoud be match)
 		//driver.findElement(By.xpath("//input[@id='search_query_top'] or //input[@name='search_query']")).sendKeys("Type to search");

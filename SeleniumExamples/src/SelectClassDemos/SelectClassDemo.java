@@ -1,5 +1,6 @@
 package SelectClassDemos;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +25,7 @@ public class SelectClassDemo {
 		driver.get("https://www.opencart.com/index.php?route=account/register");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		WebElement country = (WebElement) driver.findElement(By.cssSelector("select#input-country.form-control"));
 		//Select countryselect = new Select(driver.findElement(By.xpath("//select[@id='input-country']")));

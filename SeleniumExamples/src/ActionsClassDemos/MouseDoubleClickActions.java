@@ -1,7 +1,9 @@
 package ActionsClassDemos;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,7 +27,7 @@ public class MouseDoubleClickActions {
 		driver.get("https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_dblclick");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		
 		driver.switchTo().frame("iframeResult");
 		
@@ -33,6 +35,9 @@ public class MouseDoubleClickActions {
 		
 		Actions mouseAct = new Actions(driver);
 		mouseAct.doubleClick(ptext).perform();
+		Alert alertwindow = driver.switchTo().alert();
+		alertwindow.accept();
+		
 		
 	}
 

@@ -1,5 +1,6 @@
 package Locators;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -23,7 +24,7 @@ public class XpathAxesDemo {
 		driver.get("https://www.practo.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		driver.findElement(By.xpath("//input[@data-qa-id='omni-searchbox-locality']")).click();
 		driver.findElement(By.xpath("//input[@data-qa-id='omni-searchbox-locality']")).clear();

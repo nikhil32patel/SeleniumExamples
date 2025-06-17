@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -20,7 +21,7 @@ public class XpathDebug {
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		 
 		driver.findElement(By.xpath("//span[@class=\"nav-line-2\"]/parent::div")).click();

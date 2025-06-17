@@ -5,7 +5,7 @@ import java.util.Collections;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Config {
 
@@ -15,9 +15,12 @@ public class Config {
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions chromoption = new ChromeOptions();
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			chromoption.addArguments("--disable-notifications");
 			chromoption.setExperimentalOption("excludeSwitches",Collections.singletonList("enable-automation"));
+		    
+			//driver = new ChromeDriver(chromoption);*/
+		    
 		    driver = new ChromeDriver(chromoption);
 		}
 	return driver;

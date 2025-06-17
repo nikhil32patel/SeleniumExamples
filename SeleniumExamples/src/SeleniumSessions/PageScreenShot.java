@@ -2,6 +2,7 @@ package SeleniumSessions;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -27,7 +28,7 @@ public class PageScreenShot {
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		driver.get("http://www.google.com");
 		takeScreenShot("GoogleHome");

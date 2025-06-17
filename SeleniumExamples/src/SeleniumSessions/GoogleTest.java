@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +28,7 @@ public class GoogleTest {
 		driver.get("https://www.google.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	
 		driver.switchTo().frame("backgroundImage");
 		Thread.sleep(10);

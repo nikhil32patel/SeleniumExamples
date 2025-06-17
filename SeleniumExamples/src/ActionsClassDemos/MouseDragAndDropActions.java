@@ -1,5 +1,6 @@
 package ActionsClassDemos;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -23,7 +24,7 @@ public class MouseDragAndDropActions {
 		driver.get("http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		WebElement source = driver.findElement(By.xpath("//div[@id='box3']"));
 		WebElement destination = driver.findElement(By.xpath("//div[@id='box103']"));

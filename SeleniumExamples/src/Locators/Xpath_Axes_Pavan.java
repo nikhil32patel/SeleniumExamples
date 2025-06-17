@@ -1,5 +1,6 @@
 package Locators;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -23,7 +24,7 @@ public class Xpath_Axes_Pavan {
 		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		/*
 		//tbody/tr[3]/td[1]/self::td

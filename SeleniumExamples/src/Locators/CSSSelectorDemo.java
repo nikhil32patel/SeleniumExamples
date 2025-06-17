@@ -1,5 +1,6 @@
 package Locators;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -22,7 +23,7 @@ public class CSSSelectorDemo {
 		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		/*
 		 * <input type="text" class="inputtext _55r1 _6luy" 

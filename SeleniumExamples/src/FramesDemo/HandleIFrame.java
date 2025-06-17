@@ -1,5 +1,6 @@
 package FramesDemo;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import pac.config.*;
 import org.openqa.selenium.By;
@@ -30,7 +31,7 @@ public class HandleIFrame {
 		driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		driver.switchTo().frame("packageListFrame");
 		Thread.sleep(5);

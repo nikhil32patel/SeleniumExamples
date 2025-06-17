@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +27,8 @@ public class FindelementsConcepts {
 		driver.manage().deleteAllCookies();
 
 		//daynamic wait
-		driver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		 List<WebElement> linklist =  driver.findElements(By.tagName("a"));
 		 System.out.println(linklist.size());

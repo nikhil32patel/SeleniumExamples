@@ -1,5 +1,6 @@
 package AlertsDemos;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +27,7 @@ public class PermissionPopupNotification {
 		driver.get("https://www.cleartrip.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			
 	}
 

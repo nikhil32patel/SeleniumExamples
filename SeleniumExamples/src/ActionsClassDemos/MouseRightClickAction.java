@@ -1,5 +1,6 @@
 package ActionsClassDemos;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -20,7 +21,7 @@ public class MouseRightClickAction {
 		driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		WebElement button = driver.findElement(By.xpath("//span[contains(text(),'right click me')]"));
 		Actions act = new Actions(driver);

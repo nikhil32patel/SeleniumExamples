@@ -1,5 +1,6 @@
 package SelectClassDemos;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -23,7 +24,7 @@ public class AutoSelectDropDown {
 		driver.get("http://3.110.88.201/dropdownsPractise/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		driver.findElement(By.id("autosuggest")).sendKeys("ind");
 		List<WebElement> selectlist = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));

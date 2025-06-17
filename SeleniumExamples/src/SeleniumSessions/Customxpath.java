@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -22,8 +23,8 @@ public class Customxpath {
 		driver.manage().deleteAllCookies();
 		
 		//daynamic wait
-		driver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		
 		// Absolute xpath

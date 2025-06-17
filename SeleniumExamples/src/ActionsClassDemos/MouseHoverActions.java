@@ -1,5 +1,6 @@
 package ActionsClassDemos;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -23,7 +24,7 @@ public class MouseHoverActions {
 		driver.get("https://demo.opencart.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		WebElement desktopMenu = driver.findElement(By.linkText("Desktops"));
 		WebElement laptopsandDesktops = driver.findElement(By.xpath("//a[contains(text(),'Mac (1)')]"));

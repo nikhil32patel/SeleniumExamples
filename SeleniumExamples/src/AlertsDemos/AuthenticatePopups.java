@@ -1,5 +1,6 @@
 package AlertsDemos;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -23,7 +24,7 @@ public class AuthenticatePopups {
 		driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		
 		
